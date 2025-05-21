@@ -53,6 +53,12 @@ function App() {
     return true;
   });
 
+  // Sort by priority: High > Medium > Low
+  const priorityOrder = { High: 0, Medium: 1, Low: 2 };
+  const sortedTasks = [...filteredTasks].sort((a, b) => {
+    return priorityOrder[a.priority] - priorityOrder[b.priority];
+  });
+
   return (
     <div className="app">
       <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>
@@ -67,7 +73,7 @@ function App() {
       <TaskForm onAddTask={addTask} />
       <FilterBar filter={filter} onFilterChange={setFilter} />
       <TaskList
-        tasks={filteredTasks}
+        tasks={sortedTasks}
         onDeleteTask={deleteTask}
         onToggleTask={toggleTask}
         onEditTask={editTask}
