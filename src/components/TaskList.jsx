@@ -48,12 +48,15 @@ const TaskList = ({ tasks, onDeleteTask, onToggleTask, onEditTask }) => {
             </div>
           ) : (
             <>
-              <input
-                type="checkbox"
-                checked={task.completed}
-                onChange={() => onToggleTask(task.id)}
-                className="task-checkbox"
-              />
+              <label className="checkbox-container">
+                <input
+                  type="checkbox"
+                  checked={task.completed}
+                  onChange={() => onToggleTask(task.id)}
+                  className="task-checkbox"
+                />
+                <span className="checkmark"></span>
+              </label>
               <div className="task-content">
                 <span className="task-text">{task.text}</span>
                 <span className={`priority-badge ${getPriorityClass(task.priority)}`}>
