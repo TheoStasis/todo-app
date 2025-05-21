@@ -50,11 +50,10 @@ const TaskForm = ({ onAddTask }) => {
           <option value="Medium">Medium Priority</option>
           <option value="Low">Low Priority</option>
         </select>
-      </div>
-
-      <button type="submit" className="add-button">
+        <button type="submit" className="add-button">
         Add Task
       </button>
+      </div>
     </form>
   );
 };
