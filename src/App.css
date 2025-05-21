@@ -1,8 +1,55 @@
-body, #root {
+:root {
+  --bg: #f8f8f9;
+  --card-bg: #fff;
+  --text: #222e3a;
+  --input-bg: #fff;
+  --input-border: #d1d5db;
+  --primary: #3498db;
+  --primary-hover: #217dbb;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --border: #f0f0f0;
+  --task-completed: #9e9e9e;
+  --priority-high-bg: #ffebee;
+  --priority-high: #c62828;
+  --priority-medium-bg: #fff3e0;
+  --priority-medium: #ef6c00;
+  --priority-low-bg: #e8f5e9;
+  --priority-low: #2e7d32;
+  --filter-link: #3498db;
+  --filter-link-hover: #217dbb;
+  --danger: #f44336;
+  --danger-hover: #c62828;
+}
+
+body {
+  background: var(--bg);
+  color: var(--text);
   min-height: 100vh;
-  background: #f8f8f9;
   margin: 0;
   font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+body.dark {
+  --bg: #181a1b;
+  --card-bg: #23272f;
+  --text: #f3f6fa;
+  --input-bg: #23272f;
+  --input-border: #444950;
+  --primary: #4fa3ff;
+  --primary-hover: #217dbb;
+  --shadow: 0 4px 24px rgba(0,0,0,0.32);
+  --border: #23272f;
+  --task-completed: #7a7a7a;
+  --priority-high-bg: #3a2327;
+  --priority-high: #ff8a80;
+  --priority-medium-bg: #3a2e23;
+  --priority-medium: #ffd180;
+  --priority-low-bg: #233a2e;
+  --priority-low: #b9f6ca;
+  --filter-link: #4fa3ff;
+  --filter-link-hover: #217dbb;
+  --danger: #ff5252;
+  --danger-hover: #ff1744;
 }
 
 .logo {
@@ -42,12 +89,12 @@ body, #root {
 }
 
 .app {
-  background: #fff;
+  background: var(--card-bg);
   max-width: 500px;
   margin: 40px auto;
   padding: 2.5rem 2rem 1.5rem 2rem;
   border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
+  box-shadow: var(--shadow);
   display: flex;
   flex-direction: column;
   align-items: stretch;
@@ -57,7 +104,7 @@ body, #root {
   font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 2rem;
-  color: #222e3a;
+  color: var(--text);
   text-align: center;
 }
 
@@ -76,10 +123,11 @@ body, #root {
 
 .task-input {
   padding: 0.7rem 1rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--input-border);
   border-radius: 5px;
   font-size: 1rem;
-  background: #fff;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 .task-input.error {
@@ -93,15 +141,16 @@ body, #root {
 
 .priority-select {
   padding: 0.7rem 1rem;
-  border: 1px solid #d1d5db;
+  border: 1px solid var(--input-border);
   border-radius: 5px;
   font-size: 1rem;
-  background: #fff;
+  background: var(--input-bg);
+  color: var(--text);
 }
 
 .add-button {
   padding: 0.7rem 1.5rem;
-  background-color: #3498db;
+  background-color: var(--primary);
   color: #fff;
   border: none;
   border-radius: 5px;
@@ -112,7 +161,7 @@ body, #root {
 }
 
 .add-button:hover {
-  background: #217dbb;
+  background: var(--primary-hover);
 }
 
 .task-list {
@@ -129,7 +178,7 @@ body, #root {
   background: none;
   border-radius: 6px;
   box-shadow: none;
-  border-bottom: 1px solid #f0f0f0;
+  border-bottom: 1px solid var(--border);
 }
 
 .task-content {
@@ -142,6 +191,7 @@ body, #root {
 .task-text {
   flex: 1;
   font-size: 1.05rem;
+  color: var(--text);
 }
 
 .priority-badge {
@@ -152,18 +202,18 @@ body, #root {
 }
 
 .priority-high {
-  background-color: #ffebee;
-  color: #c62828;
+  background-color: var(--priority-high-bg);
+  color: var(--priority-high);
 }
 
 .priority-medium {
-  background-color: #fff3e0;
-  color: #ef6c00;
+  background-color: var(--priority-medium-bg);
+  color: var(--priority-medium);
 }
 
 .priority-low {
-  background-color: #e8f5e9;
-  color: #2e7d32;
+  background-color: var(--priority-low-bg);
+  color: var(--priority-low);
 }
 
 .task-actions {
@@ -183,12 +233,12 @@ body, #root {
 }
 
 .edit-button {
-  background: #2196F3;
+  background: var(--primary);
   color: #fff;
 }
 
 .delete-button {
-  background: #f44336;
+  background: var(--danger);
   color: #fff;
 }
 
@@ -204,7 +254,7 @@ body, #root {
 
 .completed .task-text {
   text-decoration: line-through;
-  color: #9e9e9e;
+  color: var(--task-completed);
 }
 
 .completed .priority-badge {
@@ -258,19 +308,19 @@ body, #root {
   left: 0;
   height: 18px;
   width: 18px;
-  background-color: #fff;
-  border: 2px solid #d1d5db;
+  background-color: var(--input-bg);
+  border: 2px solid var(--input-border);
   border-radius: 4px;
   transition: all 0.2s ease;
 }
 
 .checkbox-container:hover input ~ .checkmark {
-  border-color: #3498db;
+  border-color: var(--primary);
 }
 
 .checkbox-container input:checked ~ .checkmark {
-  background-color: #3498db;
-  border-color: #3498db;
+  background-color: var(--primary);
+  border-color: var(--primary);
 }
 
 .checkmark:after {
@@ -303,7 +353,7 @@ body, #root {
 }
 
 .utility-link {
-  color: #3498db;
+  color: var(--filter-link);
   text-decoration: none;
   cursor: pointer;
   margin-left: 1.5rem;
@@ -312,15 +362,15 @@ body, #root {
 }
 
 .utility-link:hover {
-  color: #217dbb;
+  color: var(--filter-link-hover);
 }
 
 .utility-link.danger {
-  color: #f44336;
+  color: var(--danger);
 }
 
 .utility-link.danger:hover {
-  color: #c62828;
+  color: var(--danger-hover);
 }
 
 /* Hide default number spinner for input[type=number] if used */
@@ -332,4 +382,19 @@ input[type=number]::-webkit-outer-spin-button {
 
 input[type=number] {
   -moz-appearance: textfield;
+}
+
+.dark-toggle {
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 0.5rem 1.2rem;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.dark-toggle:hover {
+  background: var(--primary-hover);
 }

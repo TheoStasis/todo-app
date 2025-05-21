@@ -1,12 +1,31 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import TaskForm from './components/TaskForm'
 import TaskList from './components/TaskList'
 import FilterBar from './components/FilterBar'
 
 function App() {
-  const [tasks, setTasks] = useState([]);
+  // Initialize from localStorage
+  const [tasks, setTasks] = useState(() => {
+    const stored = localStorage.getItem('tasks');
+    return stored ? JSON.parse(stored) : [];
+  });
   const [filter, setFilter] = useState('all');
+  const [darkMode, setDarkMode] = useState(false);
+
+  // Save tasks to localStorage whenever tasks change
+  useEffect(() => {
+    localStorage.setItem('tasks', JSON.stringify(tasks));
+  }, [tasks]);
+
+  // Toggle body class for dark mode
+  useEffect(() => {
+    if (darkMode) {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [darkMode]);
 
   const addTask = (newTask) => {
     setTasks([...tasks, newTask]);
@@ -36,6 +55,14 @@ function App() {
 
   return (
     <div className="app">
+      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>
+        <button
+          className="dark-toggle"
+          onClick={() => setDarkMode((prev) => !prev)}
+        >
+          {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
+        </button>
+      </div>
       <h1>Todo App</h1>
       <TaskForm onAddTask={addTask} />
       <FilterBar filter={filter} onFilterChange={setFilter} />
