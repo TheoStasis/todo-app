@@ -1,24 +1,24 @@
 :root {
-  --bg: #f8f8f9;
-  --card-bg: #fff;
-  --text: #222e3a;
-  --input-bg: #fff;
-  --input-border: #d1d5db;
-  --primary: #3498db;
-  --primary-hover: #217dbb;
-  --shadow: 0 4px 24px rgba(0,0,0,0.08);
-  --border: #f0f0f0;
-  --task-completed: #9e9e9e;
-  --priority-high-bg: #ffebee;
-  --priority-high: #c62828;
-  --priority-medium-bg: #fff3e0;
-  --priority-medium: #ef6c00;
-  --priority-low-bg: #e8f5e9;
-  --priority-low: #2e7d32;
-  --filter-link: #3498db;
-  --filter-link-hover: #217dbb;
-  --danger: #f44336;
-  --danger-hover: #c62828;
+  --bg: #18181b;
+  --card-bg: #232136;
+  --text: #f3f6fa;
+  --input-bg: #232136;
+  --input-border: #393552;
+  --primary: #a259ff;
+  --primary-hover: #7c3aed;
+  --shadow: 0 4px 24px rgba(0,0,0,0.32);
+  --border: #232136;
+  --task-completed: #7a7a7a;
+  --priority-high-bg: #2a2139;
+  --priority-high: #a259ff;
+  --priority-medium-bg: #393552;
+  --priority-medium: #c4a7e7;
+  --priority-low-bg: #232136;
+  --priority-low: #8aadf4;
+  --filter-link: #a259ff;
+  --filter-link-hover: #7c3aed;
+  --danger: #ff5252;
+  --danger-hover: #ff1744;
 }
 
 body {
@@ -33,26 +33,26 @@ body {
 }
 
 body.dark {
-  --bg: #181a1b;
-  --card-bg: #23272f;
-  --text: #f3f6fa;
-  --input-bg: #23272f;
-  --input-border: #444950;
-  --primary: #4fa3ff;
-  --primary-hover: #217dbb;
-  --shadow: 0 4px 24px rgba(0,0,0,0.32);
-  --border: #23272f;
-  --task-completed: #7a7a7a;
-  --priority-high-bg: #3a2327;
-  --priority-high: #ff8a80;
-  --priority-medium-bg: #3a2e23;
-  --priority-medium: #ffd180;
-  --priority-low-bg: #233a2e;
-  --priority-low: #b9f6ca;
-  --filter-link: #4fa3ff;
-  --filter-link-hover: #217dbb;
-  --danger: #ff5252;
-  --danger-hover: #ff1744;
+  --bg: #f7f7fa;
+  --card-bg: #fff;
+  --text: #1a1a1a;
+  --input-bg: #fff;
+  --input-border: #d1d5db;
+  --primary: #a259ff;
+  --primary-hover: #7c3aed;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --border: #ececf1;
+  --task-completed: #9e9e9e;
+  --priority-high-bg: #fbefff;
+  --priority-high: #a259ff;
+  --priority-medium-bg: #f3e8ff;
+  --priority-medium: #7c3aed;
+  --priority-low-bg: #e0e7ff;
+  --priority-low: #6366f1;
+  --filter-link: #a259ff;
+  --filter-link-hover: #7c3aed;
+  --danger: #f44336;
+  --danger-hover: #c62828;
 }
 
 #root {
