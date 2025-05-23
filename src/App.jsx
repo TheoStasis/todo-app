@@ -12,6 +12,7 @@ function App() {
   });
   const [filter, setFilter] = useState('all');
   const [darkMode, setDarkMode] = useState(false);
+  const [sortBy, setSortBy] = useState('priority'); // 'priority' or 'date'
 
   // Save tasks to localStorage whenever tasks change
   useEffect(() => {
@@ -53,10 +54,15 @@ function App() {
     return true;
   });
 
-  // Sort by priority: High > Medium > Low
-  const priorityOrder = { High: 0, Medium: 1, Low: 2 };
+  // Sort tasks based on selected sort option
   const sortedTasks = [...filteredTasks].sort((a, b) => {
-    return priorityOrder[a.priority] - priorityOrder[b.priority];
+    if (sortBy === 'priority') {
+      const priorityOrder = { High: 0, Medium: 1, Low: 2 };
+      return priorityOrder[a.priority] - priorityOrder[b.priority];
+    } else {
+      // Sort by date (newest first)
+      return new Date(b.createdAt) - new Date(a.createdAt);
+    }
   });
 
   return (
@@ -71,7 +77,24 @@ function App() {
         </button>
       </div>
       <TaskForm onAddTask={addTask} />
-      <FilterBar filter={filter} onFilterChange={setFilter} />
+      <div className="controls">
+        <FilterBar filter={filter} onFilterChange={setFilter} />
+        <div className="sort-controls">
+          <span className="sort-label">Sort by:</span>
+          <button
+            className={`sort-button ${sortBy === 'priority' ? 'active' : ''}`}
+            onClick={() => setSortBy('priority')}
+          >
+            Priority
+          </button>
+          <button
+            className={`sort-button ${sortBy === 'date' ? 'active' : ''}`}
+            onClick={() => setSortBy('date')}
+          >
+            Date
+          </button>
+        </div>
+      </div>
       <TaskList
         tasks={sortedTasks}
         onDeleteTask={deleteTask}

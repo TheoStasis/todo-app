@@ -514,3 +514,56 @@ input[type=number] {
   align-items: center;
   margin-bottom: 2rem;
 }
+
+.controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  gap: 1rem;
+}
+
+.sort-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sort-label {
+  color: var(--text-secondary);
+  font-size: 0.875rem;
+}
+
+.sort-button {
+  padding: 0.5rem 1rem;
+  border-radius: 0.75rem;
+  font-size: 0.875rem;
+  background-color: var(--bg-secondary);
+  color: var(--text-secondary);
+  transition: var(--transition-base);
+}
+
+.sort-button.active {
+  background-color: var(--accent-color);
+  color: white;
+}
+
+.sort-button:hover:not(.active) {
+  background-color: var(--apple-gray-200);
+  color: var(--text-primary);
+}
+
+.dark .sort-button:hover:not(.active) {
+  background-color: var(--apple-dark-300);
+}
+
+@media (max-width: 600px) {
+  .controls {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .sort-controls {
+    justify-content: flex-end;
+  }
+}
