@@ -24,7 +24,7 @@
   --text-secondary: #7a7a7a;
   --accent-color: #a259ff;
   --red-500: #ff5252;
-  --yellow-500: #f3e8ff;
+  --yellow-500: #ffcc00;
   --green-500: #8aadf4;
   --apple-gray-200: #393552;
   --apple-dark-300: #7c3aed;
@@ -68,7 +68,7 @@ body.dark {
   --text-secondary: #9e9e9e;
   --accent-color: #a259ff;
   --red-500: #ff5252;
-  --yellow-500: #f3e8ff;
+  --yellow-500: #ffcc00;
   --green-500: #6366f1;
   --apple-gray-200: #393552;
   --apple-dark-300: #7c3aed;
@@ -429,9 +429,7 @@ input[type=number]::-webkit-outer-spin-button {
   margin: 0;
 }
 
-input[type=number] {
-  -moz-appearance: textfield;
-}
+
 
 .dark-toggle {
   padding: 0.5rem 1rem;
