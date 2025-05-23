@@ -61,15 +61,15 @@ function App() {
 
   return (
     <div className="app">
-      <div style={{ display: 'flex', justifyContent: 'flex-end', marginBottom: '1rem' }}>
+      <div className="header">
+        <h1>Tasks</h1>
         <button
           className="dark-toggle"
           onClick={() => setDarkMode((prev) => !prev)}
         >
-          {darkMode ? '🌙 Dark Mode' : '☀️ Light Mode'}
+          {darkMode ? '☀️ Light' : '🌙 Dark'}
         </button>
       </div>
-      <h1>Todo App</h1>
       <TaskForm onAddTask={addTask} />
       <FilterBar filter={filter} onFilterChange={setFilter} />
       <TaskList
