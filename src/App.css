@@ -589,24 +589,11 @@ input[type=number]::-webkit-outer-spin-button {
   font-weight: 500;
   font-size: 0.875rem;
   transition: var(--transition-base);
-}
-
-.save-button {
   background-color: var(--accent-color);
   color: white;
 }
 
-.save-button:hover {
+.save-button:hover, .cancel-button:hover {
   background-color: var(--primary-hover);
-  transform: translateY(-1px);
-}
-
-.cancel-button {
-  background-color: var(--apple-gray-200);
-  color: var(--text);
-}
-
-.cancel-button:hover {
-  background-color: var(--apple-dark-300);
   transform: translateY(-1px);
 }
